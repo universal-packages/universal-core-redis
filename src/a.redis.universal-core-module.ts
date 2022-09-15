@@ -4,7 +4,7 @@ import { TerminalTransport } from '@universal-packages/logger'
 import { createClient } from 'redis'
 import { RedisModuleConfig } from './redis.types'
 
-export default class IoredisModule extends CoreModule<RedisModuleConfig> {
+export default class RedisModule extends CoreModule<RedisModuleConfig> {
   public static readonly moduleName = 'redis-module'
   public static readonly description = 'Redis core module wrapper'
 
@@ -21,7 +21,7 @@ export default class IoredisModule extends CoreModule<RedisModuleConfig> {
     })
 
     this.client.on('ready', (): void => {
-      this.logger.publish('INFO', 'Redis client is rady', null, 'REDIS')
+      this.logger.publish('INFO', 'Redis client is ready', null, 'REDIS')
     })
 
     await this.client.connect()

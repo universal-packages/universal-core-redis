@@ -1,7 +1,7 @@
 {
   "name": "@universal-packages/core-redis",
   "version": "1.0.0",
-  "description": "Redis universal-core module abstraction.",
+  "description": "Redis universal-core module abstraction",
   "author": "David De Anda <david@universal-packages.com> (https://github.com/universal-packages)",
   "license": "MIT",
   "main": "index.js",
@@ -19,7 +19,6 @@
     "@types/uuid": "^8.3.4",
     "jest": "^28.1.0",
     "jest-circus": "^28.1.0",
-    "pg": "^8.7.3",
     "ts-jest": "^28.0.4",
     "typescript": "^4.7.3"
   },
