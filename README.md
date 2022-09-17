@@ -13,6 +13,12 @@ npm install @universal-packages/core-redis
 npm install redis
 ```
 
+## Initialization
+
+```shell
+ucore exec redis-task init
+```
+
 ## Access client
 
 Core will expose the module `redisModule` as a global if configured or in the core global object as in `coreModules`.
@@ -22,7 +28,7 @@ redisModule.client.set()
 ```
 
 ```js
-core.coreModules.redisModule.client.set()
+core.coreModules['redis-module'].client.set()
 ```
 
 ## Typescript
