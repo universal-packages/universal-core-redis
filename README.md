@@ -19,16 +19,24 @@ npm install redis
 ucore exec redis-task init
 ```
 
-## Access client
+## Global
 
-Core will expose the module `redisModule` as a global if configured or in the core global object as in `coreModules`.
+Typeorm expose the `RedisClient` as the global subject if core `modulesAsGlobals` config is true.
 
 ```js
-redisModule.client.set()
+redisSubject.set()
 ```
 
 ```js
-core.coreModules['redis-module'].client.set()
+core.coreModules.redisModule.subject.set()
+```
+
+### Typescript
+
+In order for typescript to see the `redisSubject` global you need to reference the types somewhere in your project, normally `./src/globals.ts`.
+
+```ts
+/// <reference types="@universal-packages/core-redis" />
 ```
 
 ## Typescript
