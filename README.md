@@ -21,7 +21,7 @@ ucore exec redis-task init
 
 ## Global
 
-Typeorm expose the `RedisClient` as the global subject if core `modulesAsGlobals` config is true.
+Core expose `RedisClient` as the global subject if core `modulesAsGlobals` config is true.
 
 ```js
 redisSubject.set()
