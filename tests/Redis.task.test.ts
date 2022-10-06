@@ -8,7 +8,7 @@ describe('RedisTask', (): void => {
   it('behaves as expected', async (): Promise<void> => {
     const logger = new Logger({ silence: true })
 
-    let task = new RedisTask('init', [], {}, logger, {})
+    let task = new RedisTask('init', [], {}, logger)
     await task.exec()
     expect(populateTemplates).toHaveBeenCalled()
   })
