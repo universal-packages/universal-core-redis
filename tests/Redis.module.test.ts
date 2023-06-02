@@ -1,6 +1,7 @@
 import { Logger } from '@universal-packages/logger'
 import EventEmitter from 'events'
 import { createClient } from 'redis'
+
 import { RedisModule } from '../src'
 
 class ClientMock extends EventEmitter {

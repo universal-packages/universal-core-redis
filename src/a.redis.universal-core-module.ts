@@ -1,6 +1,7 @@
 import { CoreModule } from '@universal-packages/core'
 import { TerminalTransport } from '@universal-packages/logger'
 import { createClient } from 'redis'
+
 import { RedisClient, RedisModuleConfig } from './redis.types'
 
 export default class RedisModule extends CoreModule<RedisModuleConfig> {

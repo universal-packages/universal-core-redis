@@ -1,5 +1,6 @@
 import { Logger } from '@universal-packages/logger'
 import { populateTemplates } from '@universal-packages/template-populator'
+
 import RedisTask from '../src/Redis.universal-core-task'
 
 jest.mock('@universal-packages/template-populator')
