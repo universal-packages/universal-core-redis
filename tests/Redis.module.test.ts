@@ -20,7 +20,7 @@ jest.mock('redis')
 const createClientMock = createClient as unknown as jest.Mock
 createClientMock.mockImplementation((): ClientMock => new ClientMock())
 
-describe('RedismModule', (): void => {
+describe(RedisModule, (): void => {
   it('behaves as expected', async (): Promise<void> => {
     const logger = new Logger({ silence: true })
     const module = new RedisModule({} as any, logger)

@@ -5,7 +5,7 @@ import RedisTask from '../src/Redis.universal-core-task'
 
 jest.mock('@universal-packages/template-populator')
 
-describe('RedisTask', (): void => {
+describe(RedisTask, (): void => {
   it('behaves as expected', async (): Promise<void> => {
     const logger = new Logger({ silence: true })
 
