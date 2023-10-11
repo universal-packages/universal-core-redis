@@ -5,6 +5,7 @@ import { createClient } from 'redis'
 import { RedisClient, RedisModuleConfig } from './redis.types'
 
 export default class RedisModule extends CoreModule<RedisModuleConfig> {
+  public static readonly environment = '!test'
   public static readonly moduleName = 'redis-module'
   public static readonly description = 'Redis core module wrapper'
 
