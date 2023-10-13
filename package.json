@@ -31,9 +31,7 @@
     "redis": "^4.3.1"
   },
   "jest": {
-    "transform": {
-      "^.+\\.(ts|tsx)$": "ts-jest"
-    },
+    "preset": "ts-jest",
     "collectCoverageFrom": [
       "src/**/*.ts"
     ]
