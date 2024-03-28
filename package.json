@@ -16,10 +16,10 @@
     "update-universal-dependencies": "umaintenance update-universal-dependencies"
   },
   "dependencies": {
-    "@universal-packages/logger-terminal-presenter": "^1.0.9"
+    "@universal-packages/logger-terminal-presenter": "^1.0.10"
   },
   "peerDependencies": {
-    "@universal-packages/core": "^1.17.4",
+    "@universal-packages/core": "^1.17.5",
     "redis": "^4.3.1"
   },
   "devDependencies": {
