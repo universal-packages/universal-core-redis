@@ -1,7 +1,7 @@
 import { CoreModule, EnvironmentName } from '@universal-packages/core'
-import { TerminalTransport } from '@universal-packages/logger'
 import { createClient } from 'redis'
 
+import { LOG_CONFIGURATION } from './LOG_CONFIGURATION'
 import { RedisClient, RedisModuleConfig } from './redis.types'
 
 export default class RedisModule extends CoreModule<RedisModuleConfig> {
@@ -12,25 +12,52 @@ export default class RedisModule extends CoreModule<RedisModuleConfig> {
   public subject: RedisClient
 
   public async prepare(): Promise<void> {
-    const terminalTransport = this.logger.getTransport('terminal') as TerminalTransport
-    terminalTransport.options.categoryColors['REDIS'] = 'RED'
-
     this.subject = createClient(this.config)
 
     this.subject.on('connect', (): void => {
-      this.logger.publish('DEBUG', 'Redis client is connecting', null, 'REDIS', { metadata: this.config })
+      this.logger.log(
+        {
+          level: 'DEBUG',
+          title: 'Redis client is connecting',
+          category: 'REDIS',
+          metadata: this.config
+        },
+        LOG_CONFIGURATION
+      )
     })
 
     this.subject.on('ready', (): void => {
-      this.logger.publish('INFO', 'Redis client is ready', null, 'REDIS')
+      this.logger.log(
+        {
+          level: 'INFO',
+          title: 'Redis client is ready',
+          category: 'REDIS'
+        },
+        LOG_CONFIGURATION
+      )
     })
 
     this.subject.on('error', (error: Error): void => {
-      this.logger.publish('ERROR', 'There was an error while connected to the server', null, 'REDIS', { error })
+      this.logger.log(
+        {
+          level: 'ERROR',
+          title: 'There was an error while connected to the server',
+          category: 'REDIS',
+          error
+        },
+        LOG_CONFIGURATION
+      )
     })
 
     this.subject.on('reconnecting', (): void => {
-      this.logger.publish('WARNING', 'Reconnecting to server', null, 'REDIS')
+      this.logger.log(
+        {
+          level: 'WARNING',
+          message: 'Reconnecting to server',
+          category: 'REDIS'
+        },
+        LOG_CONFIGURATION
+      )
     })
 
     await this.subject.connect()
