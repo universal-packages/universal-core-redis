@@ -16,7 +16,7 @@
     "update-universal-dependencies": "umaintenance update-universal-dependencies"
   },
   "peerDependencies": {
-    "@universal-packages/core": "^1.20.0",
+    "@universal-packages/core": "^1.20.2",
     "redis": "^4.3.1"
   },
   "devDependencies": {
