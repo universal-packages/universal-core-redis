@@ -18,7 +18,7 @@ npm install redis
 ## Initialization
 
 ```shell
-ucore exec redis-task init
+ucore initialize redis
 ```
 
 ## Global
