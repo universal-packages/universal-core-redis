@@ -1,4 +1,4 @@
-import CoreInitializer from '@universal-packages/core/CoreInitializer'
+import { CoreInitializer } from '@universal-packages/core'
 
 export default class RedisInitializer extends CoreInitializer {
   public static readonly initializerName = 'redis'
