@@ -8,6 +8,7 @@ export default class RedisModule extends CoreModule<RedisModuleConfig> {
   public static readonly environment: EnvironmentName = '!test'
   public static readonly moduleName = 'redis'
   public static readonly description = 'Redis core module wrapper'
+  public static readonly loadPriority = 50
 
   public subject: RedisClient
 
